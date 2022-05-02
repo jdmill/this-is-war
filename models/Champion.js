@@ -41,3 +41,5 @@ Champion.init(
     modelName: "user",
   }
 );
+
+module.exports = Champion;
