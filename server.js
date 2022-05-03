@@ -1,4 +1,5 @@
 const express = require("express");
+const session = require('express-session');
 const sequelize = require("./config/connection");
 
 const app = express();
