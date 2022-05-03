@@ -1,2 +1,3 @@
 DROP DATABASE IF EXISTS war_db;
+
 CREATE DATABASE war_db;
