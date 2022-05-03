@@ -25,17 +25,17 @@ Champion.init(
     strength: {
       type: DataTypes.INTEGER,
     },
-    held_item: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "item",
-        key: "id",
-      },
-    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "user",
+        key: "id",
+      },
+    },
+    item_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "item",
         key: "id",
       },
     },
