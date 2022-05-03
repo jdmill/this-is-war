@@ -1,0 +1,18 @@
+[{
+  "username": "Vokan",
+  "email": "boss1@gmail.com",
+  "password": "password",
+  "champion_id": 1
+},
+{
+  "username": "Snake",
+  "email": "boss2@gmail.com",
+  "password": "password",
+  "champion_id": 2
+},
+{
+  "username": "Merlin",
+  "email": "boss3@gmail.com",
+  "password": "password",
+  "champion_id": 3
+}]
