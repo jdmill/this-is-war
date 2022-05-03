@@ -1,11 +1,18 @@
 // Importing Model and DataTypes from the sequelize library
-const { Model, DataTypes, INTEGER } = require("sequelize");
+const { Model, DataTypes } = require("sequelize");
+
+// Importing bcrypt
+const bcrypt = require("bcrypt");
 
 // IMporting database connection
 const sequelize = require("../config/connection");
 
-// Initialize Game model (table) by extending off Sequelize's Model class
-class User extends Model {}
+// Initialize user model (table) by extending off Sequelize's Model class
+class User extends Model {
+  checkPassword(inputPassword) {
+    return bcrypt.compareSync(inputPassword, this.password);
+  }
+}
 
 User.init(
   {
@@ -50,6 +57,12 @@ User.init(
     },
   },
   {
+    hooks: {
+      async beforeCreate(newUserData) {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
+    },
     sequelize,
     timestamps: false,
     freezeTableName: true,
