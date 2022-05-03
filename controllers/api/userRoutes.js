@@ -4,14 +4,11 @@ const { User } = require("../../models");
 // Create new user
 router.post("/", async (req, res) => {
   try {
-    const newUser = await User.create({
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password,
-    });
+    const newUser = await User.create(req.body);
 
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.user_id = newUser.id;
+      req.session.logged_in = true;
 
       res.status(200).json(newUser);
     });
@@ -50,8 +47,8 @@ router.post("/login", async (req, res) => {
 
     // Successful login
     req.session.save(() => {
-      req.session.user_id = dbUserData.id;
-      req.session.loggedIn = true;
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
 
       console.log("User login successful");
 
@@ -85,7 +82,7 @@ router.put("/update/:id", async (req, res) => {
 
 // Logout
 router.post("/logout", (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     req.session.destroy(() => {
       console.log("User logout successful");
       res.status(204).end();
