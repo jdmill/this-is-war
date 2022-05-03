@@ -1,7 +1,7 @@
 // Importing Model and DataTypes from the sequelize library
 const { Model, DataTypes } = require("sequelize");
 const bcrypt = require("bcrypt");
-// IMporting database connection
+// Importing database connection
 const sequelize = require("../config/connection");
 
 // Initialize Game model (table) by extending off Sequelize's Model class
