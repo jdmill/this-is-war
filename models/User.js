@@ -30,10 +30,6 @@ User.init(
     password: {
       type: DataTypes.STRING,
     },
-    inventory: {
-      type: DataTypes.ARRAY,
-      allowNull: true,
-    },
     win_count: {
       type: DataTypes.INTEGER,
       defaultValue: 0,
@@ -41,20 +37,6 @@ User.init(
     lose_count: {
       type: DataTypes.INTEGER,
       defaultValue: 0,
-    },
-    champion_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "champion",
-        key: "id",
-      },
-    },
-    game_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "game",
-        key: "id",
-      },
     },
   },
   {

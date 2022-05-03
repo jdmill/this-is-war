@@ -1,4 +1,5 @@
 // Importing Model and DataTypes from the sequelize library
+const { identity } = require("lodash");
 const { Model, DataTypes } = require("sequelize");
 
 // Importing database connection
@@ -15,7 +16,7 @@ Item.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    item_class: {
+    item_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -27,6 +28,14 @@ Item.init(
     },
     price: {
       type: DataTypes.INTEGER,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "user",
+        key: "id",
+      },
+      allowNull: true,
     },
   },
   {
