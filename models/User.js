@@ -1,5 +1,5 @@
 // Importing Model and DataTypes from the sequelize library
-const { Model, DataTypes } = require("sequelize");
+const { Model, DataTypes, INTEGER } = require("sequelize");
 
 // IMporting database connection
 const sequelize = require("../config/connection");
@@ -30,9 +30,12 @@ User.init(
     password: {
       type: DataTypes.STRING,
     },
-    inventory: {
-      type: DataTypes.ARRAY,
-      allowNull: true,
+    gold: {
+      type: DataTypes.INTEGER,
+      defaultValue: 30,
+      validate: {
+        min: 0,
+      },
     },
     win_count: {
       type: DataTypes.INTEGER,
@@ -44,17 +47,6 @@ User.init(
     },
     champion_id: {
       type: DataTypes.INTEGER,
-      references: {
-        model: "champion",
-        key: "id",
-      },
-    },
-    game_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "game",
-        key: "id",
-      },
     },
   },
   {

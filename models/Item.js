@@ -15,7 +15,7 @@ Item.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    item_class: {
+    item_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
