@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
-//create new user
+// Create new user
 router.post("/", async (req, res) => {
   try {
     const newUser = await User.create({
@@ -21,46 +21,73 @@ router.post("/", async (req, res) => {
   }
 });
 
+// Login
 router.post("/login", async (req, res) => {
   try {
-    const dbUserData = await User.findOne({
+    const userData = await User.findOne({
       where: {
         email: req.body.email,
       },
     });
 
-    if (!dbUserData) {
+    // Checks if email exists in database
+    if (!userData) {
       res.status(400).json({
-        message: "Incorrect email or password input. Please try again!",
+        message: "Incorrect email or password. Please try again!",
       });
       return;
     }
 
-    const validPassword = await dbUserData.checkPassword(req.body.password);
+    // Verifies password
+    const verifyPassword = await userData.checkPassword(req.body.password);
 
-    if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: "Incorrect email or password. Please try again!" });
+    if (!verifyPassword) {
+      res.status(400).json({
+        message: "Incorrect email or password. Please try again!",
+      });
       return;
     }
 
+    // Successful login
     req.session.save(() => {
+      req.session.user_id = dbUserData.id;
       req.session.loggedIn = true;
 
-      res
-        .status(200)
-        .json({ user: dbUserData, message: "Welcome to the war, Champion!" });
+      console.log("User login successful");
+
+      res.status(200).json({
+        user: userData,
+        message: `Hello ${userData.username}! Welcome to the arena!`,
+      });
     });
+
+    // Error handler
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
 
+// Update user information
+router.put("/update/:id", async (req, res) => {
+  try {
+    const updatedUser = await User.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+    console.log(`Updated data for User with ID ${req.params.id}`);
+    res.status(200).json(updatedUser);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Logout
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
+      console.log("User logout successful");
       res.status(204).end();
     });
   } else {
