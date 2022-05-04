@@ -8,7 +8,18 @@
   </div>
   <div class="row">
     <div class="col-12 text-center">
-      <button type="button" class="btn enter-button" href="/profile" id="enter-btn">Enter the Arena!</button>
+      {{!-- {{#if logged_in}}
+        <button type="button" class="btn enter-button" href="/profile" id="enter-button">Enter the Arena!</button>
+      {{else}}
+        <button type="button" class="btn enter-button" href="/login" id="enter-button">Enter the Arena!</button>
+      {{/if}} --}}
+
+      {{#if logged_in}}
+        <a class="btn enter-button" href="/profile">Enter the Arena!</button>
+      {{else}}
+        <a class="btn enter-button" href="/login">Enter the Arena!</button>
+      {{/if}}
+
     </div>
   </div>
   </div>
