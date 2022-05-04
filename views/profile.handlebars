@@ -5,7 +5,7 @@
 </div>
 
 
-{{!-- {{#if !user_id.champion}} --}}
+{{#unless user.champion_id}}
 <div>
   <div>
     <h3>Recruit a Champion:</h3>
@@ -37,10 +37,10 @@
         
     </form>
   </div>
-
-  {{!-- {{#else champions}} --}}
+  {{/unless}}
+  {{#each champion}}
     <div class="champ-list">
-      <h3>Champion:</h3>
+      <h3>Champion: {{champions.id}}</h3>
 
         <div>
           <div>
@@ -54,6 +54,7 @@
           </div>
         </div>
     </div>
+    {{/each}}
 </div>
 
 <script src="./js/profile.js"></script>
