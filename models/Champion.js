@@ -15,7 +15,7 @@ Champion.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    class: {
+    class_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
