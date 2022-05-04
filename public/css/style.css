@@ -3,7 +3,7 @@
 }
 
 body {
-  background: linear-gradient(to top, black, red);    
+  background: linear-gradient(to top, black, red, black);    
 }
 
 @font-face {
@@ -49,4 +49,8 @@ body {
   font-family: "Uncial Antiqua";
   color: whitesmoke;
   font-size: larger;
+}
+
+.login-font {
+  color: azure;
 }
