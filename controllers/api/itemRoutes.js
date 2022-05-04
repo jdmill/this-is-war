@@ -8,7 +8,16 @@ router.get("/", async (req,res) => {
     res.json(items);
 } catch (err) {
     res.status(500).json(err);
-}
+    }
 })
 
+router.get('/:id', async (req,res) => {
+    try {
+        const itemData = await Item.findById();
+        const items = itemData.map((item) => item.get({ plain:true }));
+        res.json(items);
+    } catch (err) {
+        res.status(500).json(err);
+        }
+})
 module.exports = router;
