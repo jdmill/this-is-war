@@ -2,6 +2,10 @@
   --warRed: rgb(112, 0, 0);
 }
 
+body {
+        background: linear-gradient(to top, black, red);    
+};
+
 @font-face {
     font-family: "Uncial Antiqua";
     src: url("/css/fonts/uncial-antiqua.ttf");
