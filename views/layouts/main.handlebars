@@ -12,6 +12,16 @@
       crossorigin="anonymous"
     />
     <link href="/css/style.css" rel="stylesheet" />
+    <style>
+      @font-face {
+        font-family: "Uncial Antiqua";
+        src: url("/css/fonts/uncial-antiqua.ttf");
+      }
+    
+    .fantasy {
+      font-family: "Uncial Antiqua";
+    }
+    </style>
   </head>
 
   <body>
@@ -31,6 +41,7 @@
       <main>
         <a href="/fight" id="fight">test</a>
         <!-- Render the sub layout -->
+        <h1 class="fantasy">THIS IS WAR</h1>
         {{{body}}}
       </main>
       <footer>
