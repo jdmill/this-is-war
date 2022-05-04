@@ -90,4 +90,19 @@ router.put("/:id", async (req, res) => {
     }
 });
 
+router.get("/fight/:user_id", async (req, res) => {
+    try {
+        const champData = await Champion.findByPk(req.params.user_id);
+        const champ = champData.get({ plain: true })
+        res.json(champ)
+        
+        if(!champData) {
+            res.status(404).json({ message: "No Champion with that ID" })
+        }
+        
+    } catch(err) {
+        res.status(500).json(err)
+    }
+})
+
 module.exports = router;

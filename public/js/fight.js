@@ -1,20 +1,19 @@
+const session = require("express-session");
+
 const warGame = async () => {
-    const champions = await fetch("api/champions", {
+    const api = session.user_id;
+    const champion = await fetch(`api/champions/fight/${api}`, {
         method: "GET",
         body: JSON.stringify({ hitpoints, strength })
     });
 
-
+    
 }
 
-Champion.prototype.attack = function (target) {
-    target.hitpoints -= this.strength;
+const opponent = {
+    name: "Dark Lord Danny DeVito",
+    hitpoints: 40,
+    strength: 20
 };
 
-Champion.prototype.isAlive = function () {
-    if (this.hitpoints > 0) {
-        return true;
-    }
-    return false;
-}
 
