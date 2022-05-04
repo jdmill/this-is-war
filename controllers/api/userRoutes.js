@@ -18,6 +18,16 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.get("/", async (req, res) => {
+  try {
+    const userData = await User.findAll();
+    const users = userData.map((item) => item.get({ plain: true }));
+    res.json(users);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // Login
 router.post("/login", async (req, res) => {
   try {
@@ -47,10 +57,8 @@ router.post("/login", async (req, res) => {
 
     // Successful login
     req.session.save(() => {
-
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-
 
       console.log("User login successful");
 
