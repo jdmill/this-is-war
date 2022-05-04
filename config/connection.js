@@ -13,6 +13,7 @@ if (process.env.JAWSDB_URL) {
     {
       host: "mysql://b223d6481c9c8f:cf874425@us-cdbr-east-05.cleardb.net/heroku_715fcb0d3f957f8?reconnect=true",
       dialect: "mysql",
+      port: "3306",
     }
   );
 }
