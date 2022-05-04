@@ -2,21 +2,21 @@ const { Champion } = require("../models");
 
 const championData = [
   {
-    class: "barbarian",
+    class_name: "barbarian",
     hitpoints: 75,
     strength: 15,
     item_id: 1,
     user_id: 1,
   },
   {
-    class: "archer",
+    class_name: "archer",
     hitpoints: 55,
     strength: 20,
     item_id: 2,
     user_id: 2,
   },
   {
-    class: "wizard",
+    class_name: "wizard",
     hitpoints: 40,
     strength: 25,
     item_id: 3,
