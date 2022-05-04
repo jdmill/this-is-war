@@ -1,12 +1,13 @@
 console.log("Script loaded properly");
 
-const enterSite = (req, res) => {
+const enterSite = (req, res, next) => {
   console.log("Button click registered");
 
   if (!req.session.logged_in) {
-    return res.redirect("/login");
+    res.redirect("/login");
   } else {
-    return res.redirect("/profile");
+    res.redirect("/profile");
+    next();
   }
 };
 
