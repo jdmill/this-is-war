@@ -11,9 +11,9 @@ User.hasOne(Champion, {
   onDelete: "CASCADE",
 });
 
-Item.belongsTo(Champion, {
-  foreignKey: "item_id"
-});
+// Item.belongsTo(Champion, {
+//   foreignKey: "item_id"
+// });
 
 Champion.belongsTo(User, {
   foreignKey: "user_id",
