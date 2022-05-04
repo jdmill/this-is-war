@@ -4,21 +4,44 @@
   </div>
 </div>
 
+
+{{!-- {{#if !user_id.champion}} --}}
 <div>
   <div>
     <h3>Recruit a Champion:</h3>
 
     <form class="form new-champ-form">
       <div class="form-group">
+
+        <div class="form-group">
+          <input type="radio" id="barbarian" name="class-select" value="barbarian">
+          <label for="barbarian">Barbarian</label><br>
+          <input type="radio" id="archer" name="class-select" value="archer">
+          <label for="archer">Archer</label><br>
+          <input type="radio" id="wizard" name="class-select" value="wizard">
+          <label for="wizard">Wizard</label>
+      </div>
+      <label for="item-sh0p">Item Shop</label>
+<input list="item-shop" id="item-choice" name="item-choice" />
+
+  <datalist id="item-shop">
+      <option value="leather gloves">
+      <option value="wooden sword">
+      <option value="cloak">
+  </datalist>
+        
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
         
     </form>
   </div>
 
-  {{#if champions.length}}
+  {{!-- {{#else champions}} --}}
     <div class="champ-list">
-      <h3>Champions:</h3>
+      <h3>Champion:</h3>
 
-      {{#each champions as |champion|}}
         <div>
           <div>
             <h4><a href="/champion/{{champion.id}}">{{champion.title}}</a></h4>
@@ -30,9 +53,7 @@
             >BANISH</button>
           </div>
         </div>
-      {{/each}}
     </div>
-  {{/if}}
 </div>
 
 <script src="./js/profile.js"></script>
