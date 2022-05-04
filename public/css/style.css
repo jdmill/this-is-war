@@ -1,3 +1,7 @@
+:root{
+  --warRed: rgb(112, 0, 0);
+}
+
 @font-face {
     font-family: "Uncial Antiqua";
     src: url("/css/fonts/uncial-antiqua.ttf");
@@ -5,4 +9,40 @@
 
 .fantasy {
   font-family: "Uncial Antiqua";
+}
+
+.title-font {
+  text-transform: capitalize;
+  background: linear-gradient(rgb(0, 0, 0, .75), rgb(128, 0, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.landing-page {
+  background-image: url("../imgs/castle.jpg");
+  background-size: cover;
+  /* Image credit to Cederic Vandenberghe https://unsplash.com/photos/21DP3hytVHw */
+}
+
+.transparent-bar {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(255, 255, 255, 0));
+}
+
+.nav-links {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  color: var(--warRed);
+}
+
+.title-box {
+  max-width: 100%;
+  min-height: 80%;
+}
+
+.enter-button {
+  background-color: rgb(112, 0, 0);
+  font-family: "Uncial Antiqua";
+  color: whitesmoke;
+  font-size: larger;
 }
