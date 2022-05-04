@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Uncial Antiqua";
+    src: url("/css/fonts/uncial-antiqua.ttf");
+  }
+
+.fantasy {
+  font-family: "Uncial Antiqua";
+}
+
+.testClass {
+    color: green;
+    font-weight: bold;
+}
