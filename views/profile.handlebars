@@ -14,14 +14,14 @@
       <div class="form-group">
 
         <div class="form-group">
-          <input type="radio" id="barbarian" name="class-select" value="barbarian">
+          <input type="radio" class="class-select" id="barbarian" name="class-select" value="barbarian">
           <label for="barbarian">Barbarian</label><br>
-          <input type="radio" id="archer" name="class-select" value="archer">
+          <input type="radio" class="class-select" id="archer" name="class-select" value="archer">
           <label for="archer">Archer</label><br>
-          <input type="radio" id="wizard" name="class-select" value="wizard">
+          <input type="radio" class="class-select" id="wizard" name="class-select" value="wizard">
           <label for="wizard">Wizard</label>
       </div>
-      <label for="item-sh0p">Item Shop</label>
+      <label for="item-shop">Item Shop</label>
 <input list="item-shop" id="item-choice" name="item-choice" />
 
   <datalist id="item-shop">
@@ -44,7 +44,7 @@
 
         <div>
           <div>
-            <h4><a href="/champion/{{champion.id}}">{{champion.title}}</a></h4>
+            <h4><a href="/champion/{{champion.id}}">{{champion.class}}</a></h4>
           </div>
           <div>
             <button
