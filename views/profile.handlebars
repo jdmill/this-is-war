@@ -3,12 +3,10 @@
     <div>
       <h2>Welcome, {{username}}!</h2>
     </div>
-
   <div>
     <div>
-      <h3>Recruit a Champion:</h3>
       <div id="class-display"></div>
-
+      <h3>Recruit a Champion:</h3>
       <form class="form new-champ-form">
         <div class="form-group justify-content-around row p-1">
           
@@ -26,9 +24,9 @@
   <input list="item-shop" id="item-choice" name="item-choice" placeholder="Item Shop" />
         </div>
     <datalist id="item-shop">
-        <option value="leather gloves">
+        {{!-- <option value="leather gloves">
         <option value="wooden sword">
-        <option value="cloak">
+        <option value="cloak"> --}}
     </datalist>
           
         </div>
@@ -46,7 +44,7 @@
             <div>
               <h4>{{class_name}}</h4>
               <h4>HP: ({{champion.hitpoints}} + {{hp_boost}})</h4>
-              <h4>Str: {{champion.strength}}</h4>
+              <h4>Str: ({{champion.strength}} + {{str_boost}})</h4>
               <h4>Item: {{item_name}}</h4>
             </div>
             <div>
