@@ -11,6 +11,8 @@ const newChampFormHandler = async (event) => {
   let strength = null;
   let item_id = null;
   let class_name = class_selection;
+  let user_id = null;
+  let champion_id = null;
 
   if (class_selection && item_selection) {
     switch (class_selection) {
@@ -52,14 +54,36 @@ const newChampFormHandler = async (event) => {
       }),
       headers: { "Content-Type": "application/json" },
     });
-    console.log(response);
 
     if (response.ok) {
       // If successful, redirect the browser to the home page
+      const champResponse = await fetch("/api/champions", {
+        method: "GET",
+      })
+        .then((data) => data.json())
+        .then((data) => {
+          champion_id = data[data.length - 1].id;
+          user_id = data[data.length - 1].user_id;
+        });
+
       document.location.replace("/profile");
     } else {
       alert(response.statusText);
     }
+  }
+
+  const userResponse = await fetch(`/api/users/update/${user_id}`, {
+    method: "PUT",
+    body: JSON.stringify({
+      champion_id,
+    }),
+    headers: { "Content-Type": "application/json" },
+  });
+  if (userResponse.ok) {
+    // If successful, redirect the browser to the home page
+    document.location.replace("/profile");
+  } else {
+    alert(response.statusText);
   }
 };
 

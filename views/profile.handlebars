@@ -1,60 +1,55 @@
-<div>
-  <div>
-    <h2>Welcome, {{username}}!</h2>
-  </div>
-</div>
-
-
-{{#unless user.champion_id}}
-<div>
-  <div>
-    <h3>Recruit a Champion:</h3>
-
-    <form class="form new-champ-form">
-      <div class="form-group">
-
-        <div class="form-group">
-          <input type="radio" class="class-select" id="barbarian" name="class-select" value="barbarian">
-          <label for="barbarian">Barbarian</label><br>
-          <input type="radio" class="class-select" id="archer" name="class-select" value="archer">
-          <label for="archer">Archer</label><br>
-          <input type="radio" class="class-select" id="wizard" name="class-select" value="wizard">
-          <label for="wizard">Wizard</label>
-      </div>
-      <label for="item-shop">Item Shop</label>
-<input list="item-shop" id="item-choice" name="item-choice" />
-
-  <datalist id="item-shop">
-      <option value="leather gloves">
-      <option value="wooden sword">
-      <option value="cloak">
-  </datalist>
-        
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-        
-    </form>
-  </div>
-  {{/unless}}
-  {{#each champion}}
-    <div class="champ-list">
-      <h3>Champion: {{champions.id}}</h3>
-
-        <div>
-          <div>
-            <h4><a href="/champion/{{champion.id}}">{{champion.class}}</a></h4>
-          </div>
-          <div>
-            <button
-              class="btn btn-sm btn-danger"
-              data-id="{{champion.id}}"
-            >BANISH</button>
-          </div>
-        </div>
+<div class="d-flex justify-content-center align-items-center col-12 text-center">
+  <div class="container-profile">
+    <div>
+      <h2>Welcome, {{username}}!</h2>
     </div>
-    {{/each}}
+
+  <div>
+    <div>
+      <h3>Recruit a Champion:</h3>
+
+      <form class="form new-champ-form">
+        <div class="form-group justify-content-around row p-1">
+
+          <div class="form-radio p-2">
+            <input type="radio" class="class-select" id="barbarian" name="class-select" value="barbarian">
+            <label for="barbarian">Barbarian</label>
+            <input type="radio" class="class-select" id="archer" name="class-select" value="archer">
+            <label for="archer">Archer</label>
+            <input type="radio" class="class-select" id="wizard" name="class-select" value="wizard">
+            <label for="wizard">Wizard</label>
+        </div>
+        <div class = "item-shop p-2">
+  <input list="item-shop" id="item-choice" name="item-choice" placeholder="Item Shop" />
+        </div>
+    <datalist id="item-shop">
+        <option value="leather gloves">
+        <option value="wooden sword">
+        <option value="cloak">
+    </datalist>
+          
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Recruit</button>
+        </div>
+          
+      </form>
+    </div>
+      <div class="champ-list">
+        <h3>Champion: {{email}}</h3>
+
+          <div>
+            <div>
+              <h4><a href="/champion/{{champion_id}}">{{class_name}}</a></h4>
+            </div>
+            <div>
+              <button
+                class="btn btn-sm btn-danger"
+                data-id="{{champion.id}}"
+              >BANISH</button>
+            </div>
+          </div>
+      </div>
 </div>
 
 <script src="./js/profile.js"></script>
