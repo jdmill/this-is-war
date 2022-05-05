@@ -34,10 +34,10 @@ AUTHENTICATION is optional
 ## Contributions
 
 This project was created by: 
-* Jonathan Miller
-* Colin Brindle
-* Mako Clary
-* Brian Samuels
+* Jonathan Miller <a href='https://github.com/jdmill'>GitHub Link</a>
+* Colin Brindle <a href='https://github.com/colinbrindle'>GitHub Link</a>
+* Mako <a href='https://github.com/Seraph-Archive'>GitHub Link</a>
+* Brian Samuels <a href='https://github.com/Samuels1996'>GitHub Link</a>
 
 With a thank you to the following instruction staff for assistance throughout the project:
 * Jung Yoon
