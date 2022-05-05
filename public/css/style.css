@@ -37,6 +37,28 @@ body {
     border-color: #BD0E09;
     color: white;
   }
+
+  #wizard-img {
+    display:none;
+  }
+  #archer-img {
+    display: none;
+  }
+  #barbarian-img {
+    display: none;
+  }
+
+  .form-radio input[id="wizard"]:checked~#wizard-img {
+    display: block;
+  }
+  .form-radio input[id="archer"]:checked~#archer-img {
+    display: block;
+  }
+  .form-radio input[id="barbarian"]:checked~#barbarian-img {
+    display: block;
+  }
+
+
   .item-shop {
     flex-basis: 25%;
   }
@@ -106,4 +128,14 @@ body {
 
 audio {
   display: none;
+}
+
+.stock-images {
+  height: 150px;
+  width: 150px;
+}
+
+.group-image {
+  height: 600px;
+  width: 600px;
 }

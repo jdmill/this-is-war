@@ -40,6 +40,9 @@ const newChampFormHandler = async (event) => {
       case "cloak":
         item_id = 3;
         break;
+      case "rum ham":
+        item_id = 4;
+        break;
     }
 
     //console.log(class_selection, item_selection, strength, hitpoints, item_id);
@@ -101,6 +104,26 @@ const deleteChampHandler = async (event) => {
     }
   }
 };
+
+function check_value(radioValue) {
+  switch (radioValue) {
+    case 3:
+      document.getElementById("class-display").innerHTML =
+        "<img src='/wizard-image.png'>";
+      break;
+
+    case 2:
+      document.getElementById("class-display").innerHTML =
+        "<img src='/archer-image.png'>";
+      break;
+
+    case 1:
+      document.getElementById("class-display").innerHTML =
+        "<img src='/barbarian-image.png'>";
+      break;
+  }
+}
+
 document
   .querySelector(".new-champ-form")
   .addEventListener("submit", newChampFormHandler);
