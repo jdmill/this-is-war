@@ -30,10 +30,24 @@ router.get("/profile", withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render("profile", {
-      ...user,
-      logged_in: true,
-    });
+    if (user.champion) {
+      console.log("champion has item");
+      const itemData = await Item.findByPk(user.champion.item_id);
+      const item = itemData.get({ plain: true });
+
+      res.render("profile", {
+        ...user,
+        ...item,
+        logged_in: true,
+      });
+    } else {
+      res.render("profile", {
+        ...user,
+        logged_in: true,
+      });
+    }
+    console.log(user);
+    //console.log(item);
   } catch (err) {
     res.status(500).json(err);
   }
