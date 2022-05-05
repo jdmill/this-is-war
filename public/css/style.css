@@ -40,22 +40,34 @@ body {
 
   #wizard-img {
     display:none;
+    height: 150px;
+    width: 150px;
   }
   #archer-img {
     display: none;
+    height: 150px;
+    width: 150px;
   }
   #barbarian-img {
     display: none;
+    height: 150px;
+    width: 150px;
   }
 
   .form-radio input[id="wizard"]:checked~#wizard-img {
     display: block;
+    height: 150px;
+    width: 150px;
   }
   .form-radio input[id="archer"]:checked~#archer-img {
     display: block;
+    height: 150px;
+    width: 150px;
   }
   .form-radio input[id="barbarian"]:checked~#barbarian-img {
     display: block;
+    height: 150px;
+    width: 150px;
   }
 
 
@@ -138,4 +150,8 @@ audio {
 .group-image {
   height: 600px;
   width: 600px;
+}
+
+.danny-font {
+  color: black;
 }
