@@ -4,7 +4,9 @@ const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
-    const userData = await User.findAll();
+    const userData = await User.findAll({
+      include: [{ model: Champion }],
+    });
     //Serialized data
     const users = userData.map((user) => user.get({ plain: true }));
 
