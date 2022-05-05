@@ -56,7 +56,6 @@ const newChampFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      // If successful, redirect the browser to the home page
       const champResponse = await fetch("/api/champions", {
         method: "GET",
       })
@@ -87,6 +86,25 @@ const newChampFormHandler = async (event) => {
   }
 };
 
+const deleteChampHandler = async (event) => {
+  if (event.target.hasAttribute("data-id")) {
+    const id = event.target.getAttribute("data-id");
+
+    const response = await fetch(`/api/champions/${id}`, {
+      method: "DELETE",
+    });
+
+    if (response.ok) {
+      document.location.replace("/profile");
+    } else {
+      alert("Failed to delete champion");
+    }
+  }
+};
 document
   .querySelector(".new-champ-form")
   .addEventListener("submit", newChampFormHandler);
+
+document
+  .querySelector(".champ-list")
+  .addEventListener("click", deleteChampHandler);
