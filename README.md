@@ -11,7 +11,7 @@ To be able to install this application please fork the repository from github an
 
 ## Usage 
 
-To be able to use this application the server must first be running and then go to the deployed sight. You may choose to either log in or sign up if you are a first time user. After that you may select your battle and then continue through the application.
+To be able to use this application the server must first be running and then go to the deployed site. You may choose to either log in or sign up if you are a first time user. After that you may select your battle and then continue through the application.
 
 ## Acceptance Criteria for the project
 ```md
