@@ -31,13 +31,15 @@ router.get("/profile", withAuth, async (req, res) => {
     const user = userData.get({ plain: true });
 
     if (user.champion) {
-      console.log("champion has item");
+      const champData = await Champion.findAll();
+      const champions = champData.get({ plain: true });
       const itemData = await Item.findByPk(user.champion.item_id);
       const item = itemData.get({ plain: true });
 
       res.render("profile", {
         ...user,
         ...item,
+        ...champions,
         logged_in: true,
       });
     } else {
@@ -46,8 +48,6 @@ router.get("/profile", withAuth, async (req, res) => {
         logged_in: true,
       });
     }
-    console.log(user);
-    //console.log(item);
   } catch (err) {
     res.status(500).json(err);
   }
