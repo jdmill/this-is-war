@@ -4,7 +4,9 @@ const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
-    const userData = await User.findAll();
+    const userData = await User.findAll({
+      include: [{ model: Champion }],
+    });
     //Serialized data
     const users = userData.map((user) => user.get({ plain: true }));
 
@@ -39,24 +41,7 @@ router.get("/profile", withAuth, async (req, res) => {
 
 router.get("/champion/:id", async (req, res) => {
   try {
-    const championData = await Champion.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ["name"],
-        },
-        {
-          model: Champion,
-          attributes: ["content", "date_created"],
-          include: [
-            {
-              model: Item,
-              attributes: ["name"],
-            },
-          ],
-        },
-      ],
-    });
+    const championData = await Champion.findByPk(req.params.id);
 
     const champion = championData.get({ plain: true });
 

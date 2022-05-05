@@ -1,9 +1,10 @@
 :root{
   --warRed: rgb(112, 0, 0);
+  --depressedGrey: rgb(131,119,118, 0.5);
 }
 
 body {
-  background: linear-gradient(to top, black, red);    
+  background: linear-gradient(to top, black, red, black);    
 }
 
 @font-face {
@@ -11,6 +12,34 @@ body {
   src: url("/css/fonts/uncial-antiqua.ttf");
 }
 
+.container {
+  flex-basis: 90%;
+}
+.container-profile {
+  background-color: var(--depressedGrey);
+}
+
+.form-radio input[type="radio"] {
+    opacity: 0;
+    width: 0;
+  }
+  
+  .form-radio label {
+    background-color: white;
+    padding: 0.313rem 0.313rem;
+    font-size: 1rem;
+    border: 0.1rem solid black;
+    border-radius: 2.188rem;
+  }
+  
+  .form-radio input[type="radio"]:checked+label {
+    background-color: #BD0E09;
+    border-color: #BD0E09;
+    color: white;
+  }
+  .item-shop {
+    flex-basis: 25%;
+  }
 .fantasy {
   font-family: "Uncial Antiqua";
 }
@@ -50,4 +79,24 @@ body {
   font-family: "Uncial Antiqua";
   color: whitesmoke;
   font-size: larger;
+}
+
+.login-font {
+  color: azure;
+}
+
+.login-button {
+     background-color: black;
+     font-family: "Uncial Antiqua";
+     color: whitesmoke;
+     font-size: larger;   
+}
+
+.login-template {
+        text-align: right;
+        padding: 20px 500px;
+}
+
+.font-family {
+        font-family: "Uncial Antiqua"; 
 }

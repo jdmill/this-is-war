@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, Champion } = require("../../models");
 
 // Create new user
 router.post("/", async (req, res) => {
@@ -14,6 +14,18 @@ router.post("/", async (req, res) => {
     });
   } catch (err) {
     console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get("/", async (req, res) => {
+  try {
+    const userData = await User.findAll({
+      include: [{ model: Champion }],
+    });
+    const users = userData.map((item) => item.get({ plain: true }));
+    res.json(users);
+  } catch (err) {
     res.status(500).json(err);
   }
 });
@@ -47,10 +59,8 @@ router.post("/login", async (req, res) => {
 
     // Successful login
     req.session.save(() => {
-
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-
 
       console.log("User login successful");
 
