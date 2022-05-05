@@ -1,22 +1,24 @@
 <body class="landing-page">
-  <div class="container title-box d-flex justify-content-center align-items-center">
-  <div class="grid">
-    <div class="row">
-    <div class="col-12">
-       <h1 class="fantasy title-font display-1">THIS IS WAR!</h1>
+  <div
+    class="container title-box d-flex justify-content-center align-items-center"
+  >
+    <div class="grid">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="fantasy title-font display-1">THIS IS WAR!</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-center">
+          {{#if logged_in}}
+            <a class="btn enter-button" href="/profile">Enter the Arena!</a>
+          {{else}}
+            <a class="btn enter-button" href="/login">Enter the Arena!</a>
+          {{/if}}
+        </div>
+      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-12 text-center">
-      {{#if logged_in}}
-        <a class="btn enter-button" href="/profile">Enter the Arena!</a>
-      {{else}}
-        <a class="btn enter-button" href="/login">Enter the Arena!</a>
-      {{/if}}
-    </div>
-  </div>
-  </div>
-</div>
 </body>
 
 <script src="./js/home.js"></script>
