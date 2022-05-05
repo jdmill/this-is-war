@@ -19,6 +19,12 @@ const itemData = [
     str_boost: 0,
     price: 5,
   },
+  {
+    item_name: "rum ham",
+    hp_boost: 20,
+    str_boost: 20,
+    price: 5,
+  },
 ];
 
 const seedItemData = () => Item.bulkCreate(itemData);
