@@ -36,11 +36,15 @@
       </form>
     </div>
       <div class="champ-list">
+        {{#if champion}}
         <h3>Champion: {{champion.class_name}}</h3>
 
           <div>
             <div>
-              <h4><a href="/champion/{{champion_id}}">{{class_name}}</a></h4>
+              <h4>{{class_name}}</h4>
+              <h4>HP: ({{champion.hitpoints}} + {{hp_boost}})</h4>
+              <h4>Str: {{champion.strength}}</h4>
+              <h4>Item: {{item_name}}</h4>
             </div>
             <div>
               <button
@@ -49,7 +53,9 @@
               >BANISH</button>
             </div>
           </div>
+          {{/if}}
       </div>
+      
 </div>
 
 <script src="./js/profile.js"></script>
