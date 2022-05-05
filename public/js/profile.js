@@ -104,7 +104,7 @@ const deleteChampHandler = async (event) => {
 
 function check_value(radioValue) {
   switch (radioValue) {
-    case 1:
+    case 3:
       document.getElementById("class-display").innerHTML =
         "<img src='/wizard-image.png'>";
       break;
@@ -114,7 +114,7 @@ function check_value(radioValue) {
         "<img src='/archer-image.png'>";
       break;
 
-    case 3:
+    case 1:
       document.getElementById("class-display").innerHTML =
         "<img src='/barbarian-image.png'>";
       break;

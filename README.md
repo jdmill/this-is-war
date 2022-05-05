@@ -1,45 +1,50 @@
-# This Is War
+# This is War!
 
-Welcome to this is war. This website was designed to be a game in a medieval setting. You may log-in and pick a variety of different Champions to come out victorious!
+## **Project Description**
 
-## Mock up 
+This is War! Inspired by FromSoftware's Soulsborne genre of games, the team, Jon Miller, Brian Samuels, Colin Brindle, and Mako developed a full stack web-game set in a medieval world. Enter the arena, claim your champion, and test your mettle against foes and fiends from across the lands!
+
+## **Usage & Distribution**
+
+To use this application, visit the [deployed Heroku app](http://thisiswar.herokuapp.com). You may choose to either log in if you are an existing user or create a new account if this is your first time visiting the site.
+
+You have full permission to fork and continue developing this application if you would like, but please ensure you credit the creators (GitHub links below).
+
+## **Links**
+
+- **[Heroku Deployed Link](http://thisiswar.herokuapp.com/)**
+- **[GitHub Repository](https://github.com/jdmill/this-is-war)**
+
+## **Site Mock Up**
+
 <img src="images/thisiswarmockup.png" alt="This is the mock up photo of main drop screen">
 
-## Installation
+## **Contributions**
 
-To be able to install this application please fork the repository from github and redeploy to heroku for full usage of the application. 
+This project was created by:
 
-## Usage 
-
-To be able to use this application the server must first be running and then go to the deployed site. You may choose to either log in or sign up if you are a first time user. After that you may select your battle and then continue through the application.
-
-## Acceptance Criteria for the project
-```md
-The project MUST include the following:
-Node.js & Express to create RESTful APIs
-Handlebars or some template engine for the front end
-Mysql & Sequelize ORM or some database technology
-GET & POST requests (PUT & DELETE are kudo points!)
-Must use one new library, package, or technology
-Must follow the MVC paradigm for folder structure
-Must use API KEYS and protect them via .env file
-Must be deployed via Heroku
-Polished UI
-Responsive
-Interactive
-Meet good quality coding standards
-Professional README
-AUTHENTICATION is optional
-```
-## Contributions
-
-This project was created by: 
-* Jonathan Miller <a href='https://github.com/jdmill'>GitHub Link</a>
-* Colin Brindle <a href='https://github.com/colinbrindle'>GitHub Link</a>
-* Mako <a href='https://github.com/Seraph-Archive'>GitHub Link</a>
-* Brian Samuels <a href='https://github.com/Samuels1996'>GitHub Link</a>
+- Jon Miller: [GitHub](https://github.com/jdmill)
+- Brian Samuels: [GitHub](https://github.com/Samuels1996)
+- Colin Brindle: [GitHub](https://github.com/colinbrindle)
+- Mako: [GitHub](https://github.com/Seraph-Archive)
 
 With a thank you to the following instruction staff for assistance throughout the project:
-* Jung Yoon
-* Travis Cook
-* Todd Trulock
+
+- Junghoon Yoon
+- Travis Cook
+- Todd Trulock
+
+## **Technologies & Assets Used**
+
+The following technologies and assets were used in development:
+
+- Node.js
+- MySQL2
+- Express-Sessions
+- Express-Handlebars
+- Dotenv
+- Connect-Session-Sequelize
+- Bcrypt
+- Bootstrap
+- [Uncial Antiqua](https://fonts.google.com/specimen/Uncial+Antiqua) by Astigmatic
+- [Closeup photo of castle with mist](https://unsplash.com/photos/21DP3hytVHw) by Cederic Vandenberghe
