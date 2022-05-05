@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, Champion } = require("../../models");
 
 // Create new user
 router.post("/", async (req, res) => {
@@ -21,7 +21,9 @@ router.post("/", async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    const userData = await User.findAll();
+    const userData = await User.findAll({
+      include: [{ model: Champion }],
+    });
     const users = userData.map((item) => item.get({ plain: true }));
     res.json(users);
   } catch (err) {
