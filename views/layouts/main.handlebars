@@ -29,6 +29,7 @@
             THIS IS WAR!
           </a>
           <!-- Conditionally render login or logout links -->
+          </body>
           {{#if logged_in}}
             <a
               class="nav-item nav-link nav-links link-danger"
@@ -40,11 +41,8 @@
               id="logout"
             >Logout</a>
           {{else}}
-            <a
-              class="nav-item nav-link nav-links link-danger"
-              href="/login"
-              id="login"
-            >Login</a>
+
+            <a class="nav-item nav-link nav-links link-danger font-family" href="/login" id="login">Login</a>
           {{/if}}
         </nav>
       </header>
