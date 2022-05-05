@@ -40,6 +40,9 @@ const newChampFormHandler = async (event) => {
       case "cloak":
         item_id = 3;
         break;
+      case "rum ham":
+        item_id = 4;
+        break;
     }
 
     //console.log(class_selection, item_selection, strength, hitpoints, item_id);
