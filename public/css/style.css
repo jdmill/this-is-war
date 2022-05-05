@@ -93,10 +93,17 @@ body {
 }
 
 .login-template {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         text-align: right;
         padding: 20px 500px;
 }
 
 .font-family {
         font-family: "Uncial Antiqua"; 
+}
+
+audio {
+  display: none;
 }
