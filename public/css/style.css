@@ -47,7 +47,7 @@ body {
 .title-font {
   text-transform: capitalize;
   background: linear-gradient(rgb(0, 0, 0, .75), rgb(128, 0, 0));
-  background-clip: border-box;
+  background-clip:border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
