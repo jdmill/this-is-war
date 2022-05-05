@@ -101,6 +101,26 @@ const deleteChampHandler = async (event) => {
     }
   }
 };
+
+function check_value(radioValue) {
+  switch (radioValue) {
+    case 1:
+      document.getElementById("class-display").innerHTML =
+        "<img src='/wizard-image.png'>";
+      break;
+
+    case 2:
+      document.getElementById("class-display").innerHTML =
+        "<img src='/archer-image.png'>";
+      break;
+
+    case 3:
+      document.getElementById("class-display").innerHTML =
+        "<img src='/barbarian-image.png'>";
+      break;
+  }
+}
+
 document
   .querySelector(".new-champ-form")
   .addEventListener("submit", newChampFormHandler);
