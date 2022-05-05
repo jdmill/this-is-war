@@ -39,24 +39,7 @@ router.get("/profile", withAuth, async (req, res) => {
 
 router.get("/champion/:id", async (req, res) => {
   try {
-    const championData = await Champion.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ["name"],
-        },
-        {
-          model: Champion,
-          attributes: ["content", "date_created"],
-          include: [
-            {
-              model: Item,
-              attributes: ["name"],
-            },
-          ],
-        },
-      ],
-    });
+    const championData = await Champion.findByPk(req.params.id);
 
     const champion = championData.get({ plain: true });
 
