@@ -7,19 +7,19 @@
   <div>
     <div>
       <h3>Recruit a Champion:</h3>
+      <div id="class-display"></div>
 
       <form class="form new-champ-form">
         <div class="form-group justify-content-around row p-1">
-
+          
           <div class="form-radio p-2">
-            <input type="radio" class="class-select" id="barbarian" name="class-select" value="barbarian">
-            <img class="stock-images" src="/barbarian-image.png">
+            <input onclick='check_value(1)' type="radio" class="class-select" id="barbarian" name="class-select" value="barbarian">
             <label for="barbarian">Barbarian</label>
-            <input type="radio" class="class-select" id="archer" name="class-select" value="archer">
-            <img class="stock-images" src="/archer-image.png">
+
+            <input onclick='check_value(2)' type="radio" class="class-select" id="archer" name="class-select" value="archer">
             <label for="archer">Archer</label>
-            <input type="radio" class="class-select" id="wizard" name="class-select" value="wizard">
-            <img class="stock-images" src="/wizard-image.png">
+
+            <input onclick='check_value(3)' type="radio" class="class-select" id="wizard" name="class-select" value="wizard">
             <label for="wizard">Wizard</label>
         </div>
         <div class = "item-shop p-2">
