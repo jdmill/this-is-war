@@ -107,3 +107,13 @@ body {
 audio {
   display: none;
 }
+
+.stock-images {
+  height: 150px;
+  width: 150px;
+}
+
+.group-image {
+  height: 600px;
+  width: 600px;
+}

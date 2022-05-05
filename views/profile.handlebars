@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center align-items-center col-12 text-center">
+<div class="d-flex justify-content-center align-items-center col-12 text-center font-family">
   <div class="container-profile">
     <div>
       <h2>Welcome, {{username}}!</h2>
@@ -13,10 +13,13 @@
 
           <div class="form-radio p-2">
             <input type="radio" class="class-select" id="barbarian" name="class-select" value="barbarian">
+            <img class="stock-images" src="/barbarian-image.png">
             <label for="barbarian">Barbarian</label>
             <input type="radio" class="class-select" id="archer" name="class-select" value="archer">
+            <img class="stock-images" src="/archer-image.png">
             <label for="archer">Archer</label>
             <input type="radio" class="class-select" id="wizard" name="class-select" value="wizard">
+            <img class="stock-images" src="/wizard-image.png">
             <label for="wizard">Wizard</label>
         </div>
         <div class = "item-shop p-2">
@@ -54,6 +57,7 @@
             </div>
           </div>
           {{/if}}
+          <img class="group-image" src="/group-image.png">
       </div>
       
 </div>
