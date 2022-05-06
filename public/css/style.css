@@ -4,7 +4,7 @@
 }
 
 body {
-  background: linear-gradient(to top, black, red, black);    
+  background: linear-gradient(to top, black, rgb(170, 3, 3), black);    
 }
 
 @font-face {
@@ -12,11 +12,14 @@ body {
   src: url("/css/fonts/uncial-antiqua.ttf");
 }
 
-.container {
-  flex-basis: 90%;
-}
+
 .container-profile {
   background-color: var(--depressedGrey);
+  flex-basis: 90%;
+}
+.btn-danger a {
+  color: white;
+  text-decoration: none;
 }
 
 .form-radio input[type="radio"] {
@@ -56,18 +59,22 @@ body {
 
   .form-radio input[id="wizard"]:checked~#wizard-img {
     display: block;
-    height: 150px;
+    height: 100px;
     width: 150px;
   }
   .form-radio input[id="archer"]:checked~#archer-img {
     display: block;
-    height: 150px;
+    height: 100px;
     width: 150px;
   }
   .form-radio input[id="barbarian"]:checked~#barbarian-img {
     display: block;
-    height: 150px;
+    height: 100px;
     width: 150px;
+  }
+
+  .signup-form {
+    padding-left: 2em;
   }
 
 
@@ -131,7 +138,7 @@ body {
         flex-wrap: wrap;
         justify-content: center;
         text-align: right;
-        padding: 20px 500px;
+        padding: 20px;
 }
 
 .font-family {
@@ -148,10 +155,41 @@ audio {
 }
 
 .group-image {
-  height: 600px;
-  width: 600px;
+  width: 80%;
+  height: auto;
 }
 
 .danny-font {
   color: black;
 }
+.warrior-img {
+  padding-top: 3em;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .form-container {
+    flex-direction: row;
+    align-self: center;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .form-container {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 718px) {
+  .signup-form {
+      padding-left: 0;
+    }
+
+}
+
+@media only screen and (max-width: 366px) {
+  form label{
+    padding-left: 4em;
+  }
+}
+

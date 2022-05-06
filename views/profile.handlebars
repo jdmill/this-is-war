@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center align-items-center col-12 text-center font-family">
+<div class="d-flex justify-content-center align-items-center col-12 text-center font-family ">
   <div class="container-profile">
     <div>
       <h2>Welcome, {{username}}!</h2>
@@ -22,18 +22,19 @@
         </div>
         <div class = "item-shop p-2">
   <input list="item-shop" id="item-choice" name="item-choice" placeholder="Item Shop" />
-        </div>
+        
     <datalist id="item-shop">
         <option value="leather gloves">
         <option value="wooden sword">
         <option value="cloak">
         <option value="rum ham">
     </datalist>
+    </div>
           
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-primary">Recruit</button>
-          <button class="btn btn-primary"><a href="/fight" id="fight">FIGHT</a></button>
+          <button class="btn btn-danger"><a href="/fight" id="fight">FIGHT</a></button>
         </div>
           
       </form>
@@ -57,9 +58,9 @@
             </div>
           </div>
           {{/if}}
-          <img class="group-image" src="/group-image.png">
+          
       </div>
-      
+      <div class="group_img"><img class="group-image" src="/group-image.png"></div>
 </div>
 
 <script src="./js/profile.js"></script>
