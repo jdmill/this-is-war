@@ -81,11 +81,11 @@ router.get("/login", (req, res) => {
 router.get("/fight", (req, res) => {
   if (req.session.logged_in) {
     res.render("fight", {
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
     });
     return;
   } else {
-    res.redirect("/login")
+    res.redirect("/login");
   }
 });
 
