@@ -39,7 +39,7 @@ const combatWombat = async () => {
             return;
         } else if (opponent.hitpoints <= 0) {
             console.log("Dark Lord Danny DeVito had died")
-            finisher.innerHTML = "Dark Lord Danny DeVito had died"
+            finisher.innerHTML = "Dark Lord Danny DeVito has died"
             return;
         } else {
             attack();
